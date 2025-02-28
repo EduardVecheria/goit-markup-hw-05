@@ -445,8 +445,7 @@ h6 {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transition: pointer-events 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -465,10 +464,19 @@ h6 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 24px;
+  padding: 72px 24px 24px 24px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn {
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: absolute;
+  top: 24px;
+  right: 24px;
   margin-left: 336px;
   border-radius: 50%;
   width: 24px;
@@ -479,14 +487,15 @@ h6 {
   padding: 0;
   bottom: 0;
   line-height: 0;
-  border-color: rgba(0, 0, 0, 0.1);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .close-btn:focus,
 .close-btn:hover {
   fill: #fff;
   background-color: #404bbf;
+  border: none;
 }
 
 .modal-text {
@@ -512,6 +521,7 @@ h6 {
   color: #8e8f99;
   margin-bottom: 4px;
   display: block;
+  line-height: 1.17;
 }
 
 .modal-con-inp {
@@ -531,6 +541,7 @@ h6 {
 }
 
 .modal-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   position: absolute;
   top: 50%;
   left: 19px;
@@ -632,6 +643,8 @@ h6 {
 .tel-form {
   display: flex;
   gap: 24px;
+  align-items: center;
+  justify-content: center;
 }
 
 .tel-inp {
@@ -642,6 +655,11 @@ h6 {
   background-color: transparent;
   outline: transparent;
   padding-left: 16px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
 }
 
 .tel-inp::placeholder {
@@ -656,24 +674,22 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
   border-radius: 4px;
   padding: 8px 24px;
-  width: 165px;
+  min-width: 165px;
   height: 40px;
   background-color: #4d5ae5;
-  border-color: transparent;
-}
-
-.tel-btn-text {
+  border: none;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  text-align: center;
   color: #fff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .telegram-icon {
   fill: #fff;
+  margin-left: 16px;
 }
